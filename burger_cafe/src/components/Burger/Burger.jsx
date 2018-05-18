@@ -24,12 +24,22 @@ const burger = (props) => {
     // i concatenated the ingredient and the various indexes to provide
     // unique keys, then, the particular ingredient as the type,
     // which has been declared in the switch statement in BurgerIngredient component.
-    const transformIngredients = ingKeysArray
+    let transformIngredients = ingKeysArray
     .map(ingrKey => {
         return [...Array(props.ingredients[ingrKey])].map((_, i) => {
             return <BurgerIngredient key={ingrKey + i} type={ingrKey}/>
         });
-    });
+    })
+    .reduce((arr, el)=>{  //this reduce is used for flattening the array. to extract each ingredient's array
+        // console.log(arr, el) 
+        return arr.concat(el)
+    }, []);
+
+    // console.log(transformIngredients); 
+
+    if(transformIngredients.length===0){
+        transformIngredients= <p>Start adding some Yummie ingredients</p>
+    }
 
     // alternative
     // const keys = Object.keys(props.ingredients);
