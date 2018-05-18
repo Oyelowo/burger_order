@@ -3,7 +3,7 @@ import Auxi from '../../hoc/Auxi';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
-const INGGREDIENT_PRICES = {
+const INGREDIENT_PRICES = {
     salad: 0.6,
     cheese: 0.4,
     meat: 2.2,
@@ -30,7 +30,7 @@ class BurgerBuilder extends Component {
         };
 
         updatedIngredients[type] = updatedCount;
-        const priceAddition = INGGREDIENT_PRICES[type];
+        const priceAddition = INGREDIENT_PRICES[type];
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
@@ -48,7 +48,7 @@ class BurgerBuilder extends Component {
         };
 
         updatedIngredients[type] = updatedCount;
-        const priceDeduction = INGGREDIENT_PRICES[type];
+        const priceDeduction = INGREDIENT_PRICES[type];
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients})
@@ -62,13 +62,15 @@ class BurgerBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <= 0;
         }
+        // gives e.g salad: true, bacon: false, meat: true, cheese: false
         return (
             <Auxi>
                 <Burger ingredients={this.state.ingredients}/>
                 <BuildControls
                     ingredientAdded={this.addIngredientHandler}
                     ingredientRemoved={this.removeIngredientHandler}
-                    disabled={disabledInfo}/>
+                    disabled={disabledInfo}
+                    price={this.state.totalPrice}/>
             </Auxi>
         );
     }
