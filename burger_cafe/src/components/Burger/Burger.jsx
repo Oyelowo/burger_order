@@ -31,7 +31,7 @@ const burger = (props) => {
         });
     })
     .reduce((arr, el)=>{  //this reduce is used for flattening the array. to extract each ingredient's array
-        // console.log(arr, el) 
+        // console.log(arr, el)  
         return arr.concat(el)
     }, []);
 
