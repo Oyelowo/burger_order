@@ -6,7 +6,7 @@ import Backdrop from '../Backdrop/Backdrop';
 const modal = (props) => {
     return (
         <Auxi>
-            <Backdrop show={props.show}/>
+            <Backdrop show={props.show} clickedBackdrop={props.modalClosed}/>
             <div
                 className={styles.Modal}
                 style={{
