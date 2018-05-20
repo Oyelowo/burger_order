@@ -6,17 +6,17 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 import Auxi from '../../../hoc/Auxi';
 
 const sideDrawer = (props) => {
-    let attachedStyles = [styles.sideDrawer, styles.Close];
+    let attachedStyles = [styles.SideDrawer, styles.Close];
 
     if (props.open) {
-        attachedStyles = [styles.sideDrawer, styles.Open]
+        attachedStyles = [styles.SideDrawer, styles.Open]
     }
     return (
         <Auxi>
             <Backdrop show={props.open} clickedBackdrop={props.closed}/>
             <div className={attachedStyles.join(' ')}>
                 <div className={styles.Logo}>
-                    <Logo height="11%"/>
+                    <Logo />
                 </div>
                 <nav><NavigationItems/></nav>
             </div>
