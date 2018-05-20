@@ -11,10 +11,22 @@ class Layout extends Component {
     sideDrawerClosedHandler = () => {
         this.setState({showSideDrawer: false})
     }
+
+    // dont do this due to the asynchonous state of set state.
+    // sideDrawerToggleHandler = () => {     this.setState({         showSideDrawer:
+    // !this.state.showSideDrawer     }) } this is a good way of using a setstate
+    // when it depends on the present state
+    sideDrawerToggleHandler = () => {
+        this.setState((prevState) => {
+            return {
+                showSideDrawer: !prevState.showSideDrawer
+            }
+        })
+    }
     render() {
         return (
             <Auxi>
-                <Toolbar/>
+                <Toolbar clickedDrawerToggle={this.sideDrawerToggleHandler}/>
                 <SideDrawer
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHandler}/>
