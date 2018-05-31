@@ -8,7 +8,7 @@ const button = (props) => {
             styles.Button,
             styles[props.btnType]
         ].join(' ')}
-            onClick={props.btnClicked}>{props.children}</button>
+            onClick={props.clicked}>{props.children}</button>
     )
 }
 

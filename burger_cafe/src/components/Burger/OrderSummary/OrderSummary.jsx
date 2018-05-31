@@ -30,8 +30,8 @@ class OrderSummary extends Component {
                             .toFixed(2)}</strong>
                 </p>
                 <p>Continue to Checkout</p>
-                <Button btnType="Danger" btnClicked={this.props.purchaseCancelled}>CANCEL ORDER</Button>
-                <Button btnType="Success" btnClicked={this.props.purchaseContinued}>CONTINUE</Button>
+                <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL ORDER</Button>
+                <Button btnType="Success" clicked={this.props.purchaseContinued}>CONTINUE</Button>
 
             </Auxi>
         )

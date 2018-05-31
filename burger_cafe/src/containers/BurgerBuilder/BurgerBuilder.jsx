@@ -26,7 +26,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
+        console.log(this.props);
         axios
             .get('https://react-my-burger-cafe.firebaseio.com/ingredients.json')
             .then(response => {
@@ -112,6 +112,7 @@ class BurgerBuilder extends Component {
         //     .then(response => this.setState({loading: false, purchasing: false}))
         //     .catch(error => this.setState({loading: false, purchasing: false}));
 
+        this.props.history.push('/checkout');
     }
 
     render() {
