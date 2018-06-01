@@ -13,7 +13,7 @@ const sideDrawer = (props) => {
     }
     return (
         <Auxi>
-            <Backdrop show={props.open} clickedBackdrop={props.closed}/>
+            <Backdrop  desktop show={props.open} className={styles.NoShow} clickedBackdrop={props.closed}/>
             <div className={attachedStyles.join(' ')}>
                 <div className={styles.Logo}>
                     <Logo />

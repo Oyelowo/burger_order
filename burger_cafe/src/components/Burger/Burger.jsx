@@ -3,7 +3,7 @@ import styles from './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 import {withRouter}from 'react-router-dom';
 const burger = (props) => {
-    console.log(props);
+    // console.log(props);
     // Object.keys is used to convert the object to Array. it takes the keys into an
     // array
     const ingKeysArray = Object.keys(props.ingredients);

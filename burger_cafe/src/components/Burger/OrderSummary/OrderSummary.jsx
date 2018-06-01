@@ -5,7 +5,7 @@ import Auxi from '../../../hoc/Auxi/Auxi';
 class OrderSummary extends Component {
     // This could be a functional component, doesn't have to be a class
     componentWillUpdate(){
-        console.log('[Ordersummary] willupdate ')
+        // console.log('[Ordersummary] willupdate ')
     }
 
     render() {
