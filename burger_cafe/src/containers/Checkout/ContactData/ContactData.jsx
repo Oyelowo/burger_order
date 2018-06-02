@@ -10,7 +10,7 @@ class ContactData extends Component {
         orderForm: {
             name: {
                 elementType: 'input',
-                elentConfig: {
+                elementConfig: {
                     type: 'text',
                     placeholder: ' Your Name'
                 },
@@ -18,7 +18,7 @@ class ContactData extends Component {
             },
             street: {
                 elementType: 'input',
-                elentConfig: {
+                elementConfig: {
                     type: 'text',
                     placeholder: 'Street'
                 },
@@ -26,7 +26,7 @@ class ContactData extends Component {
             },
             postalCode: {
                 elementType: 'input',
-                elentConfig: {
+                elementConfig: {
                     type: 'text',
                     placeholder: ' Postal Code'
                 },
@@ -34,7 +34,7 @@ class ContactData extends Component {
             },
             city: {
                 elementType: 'input',
-                elentConfig: {
+                elementConfig: {
                     type: 'text',
                     placeholder: ' City'
                 },
@@ -42,7 +42,7 @@ class ContactData extends Component {
             },
             country: {
                 elementType: 'input',
-                elentConfig: {
+                elementConfig: {
                     type: 'text',
                     placeholder: ' Country'
                 },
@@ -50,7 +50,7 @@ class ContactData extends Component {
             },
             email: {
                 elementType: 'input',
-                elentConfig: {
+                elementConfig: {
                     type: 'email',
                     placeholder: ' E-mail'
                 },
@@ -58,7 +58,7 @@ class ContactData extends Component {
             },
             deliveryMethod: {
                 elementType: 'select',
-                elentConfig: {
+                elementConfig: {
                     options: [
                         {
                             value: 'quickest',
@@ -98,28 +98,34 @@ class ContactData extends Component {
             });
 
     }
+    inputChangedHandler = (event, inputIdentifier) => {
+        const updatedOrderForm = {
+            ...this.state.orderForm
+        }
+
+        const updatedFormElement = {
+            ...updatedOrderForm[inputIdentifier]
+        }
+
+        updatedFormElement.value = event.target.value;
+        updatedOrderForm[inputIdentifier]=updatedFormElement;
+        this.setState({orderForm: updatedOrderForm})
+    }
 
     render() {
-const formElementArray = [];
-for(let key in this.state.orderForm){
-    formElementArray.push(
-        {
-            id: key,
-            config: this.state.orderForm[key]
+        const formElementArray = [];
+        for (let key in this.state.orderForm) {
+            formElementArray.push({id: key, config: this.state.orderForm[key]})
         }
-    )
-}
 
         let form = (
             <form action="/">
-                <Input elementType="..." elementConfig="..." value="..."/>
-                {formElementArray.map(formElement =>(
-                    <Input 
+                {formElementArray.map(formElement => (<Input
                     key={formElement.id}
-                    elementType={formElement.config.elementType} 
+                    elementType={formElement.config.elementType}
                     elementConfig={formElement.config.elementConfig}
-                    value={formElement.config.value}/>
-                ))}
+                    value={formElement.config.value}
+                    changed={(event) => this.inputChangedHandler(event, formElement.id)}/>))}
                 <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
             </form>
         );
