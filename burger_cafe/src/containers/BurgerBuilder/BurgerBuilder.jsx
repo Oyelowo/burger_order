@@ -13,21 +13,12 @@ import * as burgerBuilderActions from '../../store/actions/index';
 class BurgerBuilder extends Component {
     // constructor(props) {   super(props);   this.state = {   } }
     state = {
-        purchasing: false,
-        loading: false,
-        error: false
+        purchasing: false
     }
 
     componentDidMount() {
         console.log(this.props);
-        axios
-            .get('https://react-my-burger-cafe.firebaseio.com/ingredients.json')
-            .then(response => {
-                this.setState({ingredients: response.data});
-            })
-            .catch(error => {
-                this.setState({error: true})
-            });
+
     }
 
     updatePurchaseState = (ingredients) => {
@@ -91,9 +82,7 @@ class BurgerBuilder extends Component {
 
         }
 
-        if (this.state.loading) {
-            orderSummary = <Spinner/>;
-        };
+
 
         return (
             <Auxi>
