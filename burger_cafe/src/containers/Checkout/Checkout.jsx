@@ -31,9 +31,9 @@ class Checkout extends Component {
 
                 <Route
                     path={this.props.match.path + '/contact-data'}
-                    component={ContactData} />)}/>
+                    component={ContactData} />
             </div>
-        )
+        );
     }
 }
 
