@@ -104,6 +104,10 @@ class ContactData extends Component {
                         }, {
                             value: 'cheapest',
                             displayValue: 'Cheapest'
+                        },
+                        {
+                            value: 'slowest',
+                            displayValue: 'Slowest'
                         }
                     ]
                 },
