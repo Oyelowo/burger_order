@@ -84,7 +84,7 @@ class ContactData extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'email',
-                    placeholder: ' E-mail'
+                    placeholder: 'Enter Your E-mail'
                 },
                 value: '',
                 validation: {
