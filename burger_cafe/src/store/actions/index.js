@@ -11,3 +11,7 @@ export {
     fetchOrders
 }
 from './order.js';
+
+export {
+    auth
+} from './auth';
