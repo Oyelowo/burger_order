@@ -31,8 +31,10 @@ class App extends Component {
           <Route path="/checkout" component={Checkout}/>
           <Route path="/orders" component={Orders}/>
           <Route path="/logout" component={Logout}/>
-          <Route path="/" exact component={BurgerBuilder}/>
-          {/* <Redirect to='/'/> */}
+          <Route path="/" exact component={BurgerBuilder}/> 
+          {this.props.buildingBurger
+            ? <Redirect to='/checkout'/>
+            : <Redirect to='/'/>}
         </Switch>
       );
     }
@@ -49,7 +51,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.token !== null
+    isAuthenticated: state.auth.token !== null,
+    buildingBurger: state.burgerBuilder.building
   };
 };
 
