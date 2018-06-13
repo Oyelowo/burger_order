@@ -104,8 +104,7 @@ class ContactData extends Component {
                         }, {
                             value: 'cheapest',
                             displayValue: 'Cheapest'
-                        },
-                        {
+                        }, {
                             value: 'slowest',
                             displayValue: 'Slowest'
                         }
@@ -126,10 +125,12 @@ class ContactData extends Component {
         for (let formElementIdentifier in this.state.orderForm) {
             formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value
         }
+
         const order = {
             ingredients: this.props.ings,
-            price: this.props.price,
-            orderData: formData
+            price: this.props.price.toFixed(2),
+            orderData: formData,
+            userId: this.props.userId
 
         }
 
@@ -139,7 +140,7 @@ class ContactData extends Component {
 
     }
 
-    checkValidity=(value, rules) =>{
+    checkValidity = (value, rules) => {
         let isValid = true;
 
         if (!rules) {
@@ -227,12 +228,7 @@ class ContactData extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        ings: state.burgerBuilder.ingredients, 
-        price: state.burgerBuilder.totalPrice, 
-        loading: state.order.loading,
-        token: state.auth.token
-    };
+    return {ings: state.burgerBuilder.ingredients, price: state.burgerBuilder.totalPrice, loading: state.order.loading, token: state.auth.token, userId: state.auth.userId};
 };
 
 const mapDispatchToProps = dispatch => {
