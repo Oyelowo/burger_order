@@ -38,11 +38,12 @@ class BurgerBuilder extends Component {
         } else {
             this
                 .props
-                .onSetAuthRedirectPath('/checkout');
-            this
-                .props
                 .history
                 .push('/auth');
+            this
+                .props
+                .onSetAuthRedirectPath('/checkout');
+
         }
 
     }
