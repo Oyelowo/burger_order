@@ -31,7 +31,11 @@ class Orders extends Component {
 }
 
 const mapStateToProps = state => {
-    return {orders: state.order.orders, loading: state.order.loading, token: state.auth.token};
+    return {
+        orders: state.order.orders, 
+        loading: state.order.loading, 
+        token: state.auth.token
+    };
 };
 
 const mapDispatchToProps = dispatch => {
