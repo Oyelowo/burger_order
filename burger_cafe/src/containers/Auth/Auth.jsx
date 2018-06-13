@@ -51,7 +51,7 @@ class Auth extends Component {
         }
     };
 
-    checkValidity(value, rules) {
+    checkValidity = (value, rules) => {
         let isValid = true;
 
         if (!rules) {
@@ -101,17 +101,13 @@ class Auth extends Component {
             .onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup)
     }
 
-    // switchAuthModeHandler = () => {
-    //     this.setState(prevState => {
-    //         return {
-    //             isSignup: !prevState.isSignup
-    //         }
-    //     });
-    // }
-
+    // switchAuthModeHandler = () => {     this.setState(prevState => {
+    // return {             isSignup: !prevState.isSignup         }     }); }
     // Alternative
     switchAuthModeHandler = () => {
-        this.setState({isSignup: !this.state.isSignup});
+        this.setState({
+            isSignup: !this.state.isSignup
+        });
     }
 
     render() {
@@ -153,7 +149,9 @@ class Auth extends Component {
                 {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {form}
-                    <Button btnType="Success">{this.state.isSignup ? 'SIGN UP' : 'SIGN IN'}</Button>
+                    <Button btnType="Success">{this.state.isSignup
+                            ? 'SIGN UP'
+                            : 'SIGN IN'}</Button>
                 </form>
                 <Button clicked={this.switchAuthModeHandler} btnType="Danger">SWITCH TO {this.state.isSignup
                         ? 'SIGNIN'
