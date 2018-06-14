@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {updateObject} from '../../../shared/utility';
+import {updateObject, checkValidity} from '../../../shared/utility';
 
 import Button from '../../../components/UI/Button/Button';
 import styles from './ContactData.css';
@@ -175,7 +175,7 @@ class ContactData extends Component {
 
         const updatedFormElement = updateObject(this.state.orderForm[inputIdentifier],{
             value :  event.target.value,
-            valid : this.checkValidity(event.target.value, this.state.orderForm[inputIdentifier].validation),
+            valid : checkValidity(event.target.value, this.state.orderForm[inputIdentifier].validation),
             touched : true
         }) 
 
