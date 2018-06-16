@@ -8,4 +8,4 @@ Other libraries used include: **Axios, Radium, React-Router-dom, Redux-thunk Jes
 
 It was deployed on firebase
 
-Feel free to play with the app here: [Burger Cafe](https://react-my-burger-cafe.firebaseapp.com/)
+Feel free to play with the app here: [Burger Cafe](https://react-my-burger-cafe.firebaseapp.com/).
