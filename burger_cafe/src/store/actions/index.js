@@ -10,7 +10,13 @@ from './burgerBuilder.js';
 export {
     purchaseBurger,
     purchaseInit,
-    fetchOrders
+    fetchOrders,
+    purchaseBurgerStart,
+    purchaseBurgerFail,
+    purchaseBurgerSuccess,
+    fetchOrdersStart,
+    fetchOrdersFail,
+    fetchOrdersSuccess
 }
 from './order.js';
 
