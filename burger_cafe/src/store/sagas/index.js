@@ -36,5 +36,5 @@ export function* watchBurgerBuilder() {
 
 export function* watchOrder() {
     yield takeLatest(actionTypes.PURCHASE_BURGER, purchaseBurgerSaga);
-    yield takeLatest(actionTypes.FETCH_ORDERS, fetchedOrdersSaga)
+    yield takeEvery(actionTypes.FETCH_ORDERS, fetchedOrdersSaga)
 }
