@@ -82,7 +82,7 @@ const reducer = (state = initialState, action) => {
 
 
         case actionTypes.FETCH_INGREDIENTS_FAILED:
-            return fetchIngredientsFailed;
+            return fetchIngredientsFailed(state, action);
 
         default:
             return state
