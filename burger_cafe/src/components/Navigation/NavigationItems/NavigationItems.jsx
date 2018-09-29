@@ -11,7 +11,7 @@ const navigationItems = (props) => (
                 </NavigationItem>
             : null}
         {!props.isAuthenticated
-            ? <NavigationItem link="/auth">Authenticate</NavigationItem>
+            ? <NavigationItem link="/auth">SIGNUP/ SIGNIN</NavigationItem>
             : <NavigationItem link="/logout">LOGOUT</NavigationItem>}
     </ul>
 )

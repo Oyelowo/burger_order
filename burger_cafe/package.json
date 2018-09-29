@@ -2,7 +2,6 @@
   "name": "burger_cafe",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://oyelowo.github.io/burger_order/burger_cafe",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
@@ -35,7 +34,6 @@
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
-    "predeploy": "npm run build",
     "promise": "8.0.1",
     "proptypes": "^1.1.0",
     "raf": "3.4.0",
